@@ -1,0 +1,79 @@
+% Expose template
+\documentclass{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[USenglish]{datetime}
+%\usepackage{amsmath}
+
+\bibliographystyle{plain}
+
+\usepackage[breaklinks,hyperindex,colorlinks,anchorcolor=black,citecolor=black,filecolor=black,linkcolor=black,menucolor=black,urlcolor=black,pdftex]{hyperref}
+
+
+% Adapt the following to your needs
+\title{Exposé for Bachelor/Master Thesis}
+\subtitle{Title: An Amazing Thesis in Information Security}
+\author{Your Name}
+\date{\today}
+
+% PDF metadata (required by hyperref)
+\hypersetup{
+	pdftitle={Exposé for Bachelor/Master Thesis},
+	pdfauthor={Name, email},
+	pdfsubject={Title},
+	pdfkeywords={Exposé, thesis},
+	unicode={true},
+}
+
+\begin{document}
+ 
+\maketitle
+
+
+ 
+% The following contains your expose. It should be about 2 pages.
+Overall, the exposé should be around two pages. Here are some suggestions of what to include in an exposé.
+
+
+\section*{Supervision}
+
+
+\begin{tabular}{ll}
+First supervisor: & First supervisor's name \\
+Second supervisor: & Second supervisor's name \\
+% for example, if you write an external thesis, your company probably has an advisor looking out for you
+%Advisor:      & Other persons - comment out if not needed \\ 
+\end{tabular}
+
+
+\section*{Motivation}
+
+Here, you motivate the main problem that your thesis tries to address. Here are some tips:
+\begin{itemize}
+ \item Introduce the area of work
+ \item Motivate the  topic, e.g., by describing the problem.
+ \item Show that the problem that you are trying to solve is not that straightforward and has enough depth for a thesis.
+ \item Include prior work in the area by adding the necessary citations, for example like this~\cite{Shannon48}. Also cite URLs, for example like this~\cite{url}.
+ \item \ldots
+\end{itemize}
+
+
+
+ 
+\section*{Goals}
+
+Here, you should describe what the goals of the thesis are:
+
+ \begin{itemize}
+ \item Which goal do you want to achieve? What is your minimal goal and what is your optimal outcome? How does this goal relate to the challenges and problems that you listed in the motivation section?
+ \item What do you want to evaluate?
+ \item Which tools you intend to base your work on?
+\end{itemize}
+
+After reading this section, a reader should be able to tell what exactly you are going to do and how you will do it.
+
+
+\bibliography{bibtex.bib}
+
+\end{document}
