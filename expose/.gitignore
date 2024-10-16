@@ -1,0 +1,22 @@
+# Ignore LaTeX auxiliary and output files
+output/
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.pdf
+
+# Backup files
+*.bak
+*.sav
+*.tmp
+*.backup
+
+# Editor-specific files (VSCode, etc.)
+.vscode/
+*.swp
+*.swo
