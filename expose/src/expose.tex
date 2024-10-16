@@ -1,78 +1,59 @@
-% Expose template
+% Expose for Bachelor's Thesis
+
 \documentclass{scrartcl}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[USenglish]{datetime}
-\usepackage{amsmath}
-%\usepackage{amsmath}
-
+\usepackage[breaklinks,hyperindex,colorlinks,anchorcolor=black,citecolor=black,filecolor=black,linkcolor=black,menucolor=black,urlcolor=black]{hyperref}
 \bibliographystyle{plain}
 
-\usepackage[breaklinks,hyperindex,colorlinks,anchorcolor=black,citecolor=black,filecolor=black,linkcolor=black,menucolor=black,urlcolor=black,pdftex]{hyperref}
-
-
-% Adapt the following to your needs
-\title{Exposé for Bachelor/Master Thesis}
-\subtitle{Title: An Amazing Thesis in Information Security}
+\title{Exposé for Bachelor Thesis}
+\subtitle{Building a Dataset of Real-World Front-Running Exploits on the Ethereum Network}
 \author{Luis Falke}
 \date{\today}
 
-% PDF metadata (required by hyperref)
 \hypersetup{
-	pdftitle={Exposé for Bachelor/Master Thesis},
-	pdfauthor={Name, email},
-	pdfsubject={Title},
-	pdfkeywords={Exposé, thesis},
-	unicode={true},
+    pdftitle={Exposé for Bachelor Thesis},
+    pdfauthor={Luis Falke, luis.falke@ruhr-uni-bochum.de},
+    pdfsubject={Building a Dataset of Front-Running Exploits},
+    pdfkeywords={Exposé, thesis, Ethereum, front-running, dataset},
+    unicode=true,
 }
 
 \begin{document}
 
 \maketitle
 
-% The following contains your expose. It should be about 2 pages.
-Overall, the exposé should be around two pages. Here are some suggestions of what to include in an exposé.
-
-
 \section*{Supervision}
 
-
 \begin{tabular}{ll}
-	First supervisor:  & First supervisor's name  \\
-	Second supervisor: & Second supervisor's name \\
-	% for example, if you write an external thesis, your company probably has an advisor looking out for you
-	%Advisor:      & Other persons - comment out if not needed \\ 
+	First supervisor:  & Anna Piscitelli \\
+	Second supervisor: & TBD             \\
 \end{tabular}
-
 
 \section*{Motivation}
 
-Here, you motivate the main problem that your thesis tries to address. Here are some tips:
-\begin{itemize}
-	\item Introduce the area of work
-	\item Motivate the  topic, e.g., by describing the problem.
-	\item Show that the problem that you are trying to solve is not that straightforward and has enough depth for a thesis.
-	\item Include prior work in the area by adding the necessary citations, for example like this~\cite{Shannon48}. Also cite URLs, for example like this~\cite{url}.
-	\item \ldots
-\end{itemize}
-
-
-
+The Ethereum blockchain has become the backbone of decentralized finance (DeFi) applications, where millions of dollars are exchanged daily through smart contracts. However, its transparent nature has led to a rise in front-running attacks, where adversaries manipulate the order of transactions to their advantage. These attacks exploit the time delay between transaction submission and inclusion in a block, allowing attackers to insert their own transactions and gain significant profits. As DeFi continues to grow, front-running poses a critical challenge to both security and market fairness, particularly in decentralized exchanges and high-value smart contracts. Prior studies have demonstrated the prevalence of front-running attacks and their economic impact, with attackers gaining millions of dollars in profit\cite{Perez21,Torres21}. Despite the growing attention, there is a lack of comprehensive datasets documenting these exploits in a systematic way, making it difficult for researchers and developers to study and mitigate the issue. This thesis aims to address this gap by constructing a dataset of real-world front-running exploits, providing valuable insights into their mechanisms and consequences.
 
 \section*{Goals}
 
-Here, you should describe what the goals of the thesis are:
+The main goal of this thesis is to build a dataset that catalogs recent front-running exploits on the Ethereum network. This dataset will include:
 
 \begin{itemize}
-	\item Which goal do you want to achieve? What is your minimal goal and what is your optimal outcome? How does this goal relate to the challenges and problems that you listed in the motivation section?
-	\item What do you want to evaluate?
-	\item Which tools you intend to base your work on?
+	\item The source code or bytecode of vulnerable smart contracts, including DeFi applications susceptible to front-running.
+	\item The sequence of transactions used to exploit the vulnerability.
+	\item Detailed analysis of the profit gained by the attacker, calculated based on transaction records.
 \end{itemize}
 
-After reading this section, a reader should be able to tell what exactly you are going to do and how you will do it.
+The minimal goal of the thesis is to collect and document at least 50 verified cases of front-running attacks. The optimal outcome would involve analyzing several hundred cases and identifying common patterns or vulnerabilities that are exploited across different contracts. Additionally, the optimal goal includes the development of a script that can automatically detect front-running attacks. Previous works, such as FRAD~\cite{FRAD24} and GasTrace~\cite{GasTrace26}, have demonstrated the feasibility of detecting such attacks using machine learning techniques. These methods leverage classification models and gas-related features to accurately identify malicious transactions, providing a foundation for building an automated detection system.
+
+To achieve this, I will rely on publicly available blockchain data, existing academic studies, and tools like Etherscan to track down exploit transactions. I will also use Solidity for the analysis of smart contracts and Foundry to automate parts of the dataset generation process. The detection script will be implemented in Python or a similar language, and its effectiveness will be evaluated based on accuracy and scalability.
 
 
+\section*{Bibliography}
+
+\nocite{*}
 \bibliography{bibtex.bib}
 
 \end{document}
