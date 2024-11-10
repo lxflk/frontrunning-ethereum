@@ -1,20 +1,20 @@
-% Expose for Bachelor's Thesis
+% Exposé for Bachelor's Thesis
 
 \documentclass{scrartcl}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[USenglish]{datetime}
-\usepackage[breaklinks,hyperindex,colorlinks,anchorcolor=black,citecolor=black,filecolor=black,linkcolor=black,menucolor=black,urlcolor=black]{hyperref}
+\usepackage[USenglish]{babel}
+\usepackage{hyperref}
+\usepackage{graphicx}
 \bibliographystyle{plain}
 
-\title{Exposé for Bachelor Thesis}
-\subtitle{Building a Dataset of Real-World Front-Running Exploits on the Ethereum Network}
+\title{Building a Dataset of Real-World Front-Running Exploits on the Ethereum Network}
 \author{Luis Falke}
 \date{\today}
 
 \hypersetup{
-    pdftitle={Exposé for Bachelor Thesis},
+    pdftitle={Exposé for Bachelor's Thesis},
     pdfauthor={Luis Falke, luis.falke@ruhr-uni-bochum.de},
     pdfsubject={Building a Dataset of Front-Running Exploits},
     pdfkeywords={Exposé, thesis, Ethereum, front-running, dataset},
@@ -28,28 +28,54 @@
 \section*{Supervision}
 
 \begin{tabular}{ll}
-	First supervisor:  & Anna Piscitelli \\
-	Second supervisor: & TBD             \\
+    Supervisor: & Anna Piscitelli \\
 \end{tabular}
+
+\section*{Abstract}
+
+Front-running attacks pose a significant threat to the security and fairness of decentralized finance (DeFi) applications on the Ethereum network. Despite their prevalence, there is a lack of comprehensive datasets documenting these exploits systematically. This thesis aims to address this gap by constructing a dataset of real-world front-running exploits, providing valuable insights into their mechanisms and consequences. The dataset will serve as a foundation for researchers and developers to study and mitigate front-running attacks more effectively.
 
 \section*{Motivation}
 
-The Ethereum blockchain has become the backbone of decentralized finance (DeFi) applications, where millions of dollars are exchanged daily through smart contracts. However, its transparent nature has led to a rise in front-running attacks, where adversaries manipulate the order of transactions to their advantage. These attacks exploit the time delay between transaction submission and inclusion in a block, allowing attackers to insert their own transactions and gain significant profits. As DeFi continues to grow, front-running poses a critical challenge to both security and market fairness, particularly in decentralized exchanges and high-value smart contracts. Prior studies have demonstrated the prevalence of front-running attacks and their economic impact, with attackers gaining millions of dollars in profit\cite{Perez21,Torres21}. Despite the growing attention, there is a lack of comprehensive datasets documenting these exploits in a systematic way, making it difficult for researchers and developers to study and mitigate the issue. This thesis aims to address this gap by constructing a dataset of real-world front-running exploits, providing valuable insights into their mechanisms and consequences.
+The Ethereum blockchain has become the backbone of decentralized finance applications, where millions of dollars are exchanged daily through smart contracts. However, its transparent nature has led to a rise in front-running attacks, where adversaries manipulate the order of transactions to their advantage. These attacks exploit the time delay between transaction submission and inclusion in a block, allowing attackers to insert their own transactions and gain significant profits.
 
-\section*{Goals}
+As DeFi continues to grow, front-running poses a critical challenge to both security and market fairness, particularly in decentralized exchanges and high-value smart contracts. Prior studies have demonstrated the prevalence of front-running attacks and their economic impact, with attackers gaining millions of dollars in profit~\cite{Perez21,Torres21}. Despite the growing attention, there is a lack of comprehensive datasets documenting these exploits in a systematic way, making it difficult for researchers and developers to study and mitigate the issue. This thesis aims to address this gap by constructing a dataset of real-world front-running exploits, providing valuable insights into their mechanisms and consequences.
+
+\section*{Objectives}
 
 The main goal of this thesis is to build a dataset that catalogs recent front-running exploits on the Ethereum network. This dataset will include:
 
 \begin{itemize}
-	\item The source code or bytecode of vulnerable smart contracts, including DeFi applications susceptible to front-running.
-	\item The sequence of transactions used to exploit the vulnerability.
-	\item Detailed analysis of the profit gained by the attacker, calculated based on transaction records.
+    \item The source code or bytecode of vulnerable smart contracts, including DeFi applications susceptible to front-running.
+    \item The sequence of transactions used to exploit the vulnerability.
+    \item Detailed analysis of the profit gained by the attacker, calculated based on transaction records.
 \end{itemize}
 
-The minimal goal of the thesis is to collect and document at least 50 verified cases of front-running attacks. The optimal outcome would involve analyzing several hundred cases and identifying common patterns or vulnerabilities that are exploited across different contracts. Additionally, the optimal goal includes the development of a script that can automatically detect front-running attacks. Previous works, such as FRAD~\cite{FRAD24} and GasTrace~\cite{GasTrace26}, have demonstrated the feasibility of detecting such attacks using machine learning techniques. These methods leverage classification models and gas-related features to accurately identify malicious transactions, providing a foundation for building an automated detection system.
+The minimal goal is to collect and document at least 50 verified cases of front-running attacks. The optimal outcome involves analyzing several hundred cases and identifying common patterns or vulnerabilities exploited across different contracts. Additionally, the optimal goal includes the development of a script that can automatically detect front-running attacks.
 
-To achieve this, I will rely on publicly available blockchain data, existing academic studies, and tools like Etherscan to track down exploit transactions. I will also use Solidity for the analysis of smart contracts and Foundry to automate parts of the dataset generation process. The detection script will be implemented in Python or a similar language, and its effectiveness will be evaluated based on accuracy and scalability.
+\section*{Methodology}
 
+To achieve these objectives, the following methodology will be employed:
+
+\begin{enumerate}
+    \item \textbf{Data Collection}: Utilize publicly available blockchain data, existing academic studies, and tools like Etherscan to identify exploit transactions.
+    \item \textbf{Contract Analysis}: Use Solidity and related tools to analyze the source code or bytecode of vulnerable smart contracts.
+    \item \textbf{Dataset Construction}: Organize the collected data into a structured dataset, including all relevant details of each exploit.
+    \item \textbf{Pattern Identification}: Analyze the dataset to identify common patterns and vulnerabilities in front-running attacks.
+    \item \textbf{Detection Script Development}: Implement a script in Python to automatically detect front-running attacks, leveraging machine learning techniques inspired by previous works such as FRAD~\cite{FRAD24} and GasTrace~\cite{GasTrace26}.
+    \item \textbf{Evaluation}: Assess the effectiveness of the detection script based on accuracy and scalability.
+\end{enumerate}
+
+\section*{Expected Outcomes}
+
+The expected outcomes of this thesis are:
+
+\begin{itemize}
+    \item A comprehensive dataset of real-world front-running exploits on the Ethereum network.
+    \item Identification of common patterns and vulnerabilities exploited in front-running attacks.
+    \item An automated detection script capable of identifying front-running attacks with high accuracy.
+    \item Recommendations for improving security measures against front-running in smart contracts and DeFi applications.
+\end{itemize}
 
 \section*{Bibliography}
 
